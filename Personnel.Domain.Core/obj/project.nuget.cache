@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "TbN9La0Eldww04tnPD34RiDIVycq4feIGXTDpc//wKEh/fcHUJiPx0v7F/v7aE/snEF1LoGaOKVgph9garnk7Q==",
+  "success": true,
+  "projectFilePath": "D:\\Personnel\\PersonnelWebApp\\Personnel.Domain.Core\\Personnel.Domain.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\behza\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\behza\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\behza\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
