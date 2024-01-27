@@ -2,6 +2,7 @@
 using Personnel.Application.Shared;
 using Personnel.Domain.Core.Interfaces;
 using Personnel.Domain.Dtos;
+using Personnel.Domain.Dtos.Users;
 using Personnel.Domain.Entities.Identity;
 using Personnel.Domain.Security;
 using System;

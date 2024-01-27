@@ -1,5 +1,7 @@
 ﻿using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using Personnel.Domain.Core.Bus;
+using Personnel.Infra.Bus;
 
 namespace Personnel.Infra.IoC
 {
@@ -11,7 +13,8 @@ namespace Personnel.Infra.IoC
             services.AddScoped<IMediatorHandler, InMemoryBus>();
 
             //Domain Handlers
-            services.AddScoped<IRequestHandler<CreateCourseCommand, bool>, CourseCommandHandler>();
+            //services.AddScoped<IRequestHandler<CreateCourseCommand, bool>, CourseCommandHandler>();
 
         }
     }
+}

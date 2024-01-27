@@ -1,0 +1,16 @@
+D:\Personnel\PersonnelWebApp\Personnel.Domain\obj\Debug\net8.0\Personnel.Domain.csproj.AssemblyReference.cache
+D:\Personnel\PersonnelWebApp\Personnel.Domain\obj\Debug\net8.0\Personnel.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Personnel\PersonnelWebApp\Personnel.Domain\obj\Debug\net8.0\Personnel.Domain.AssemblyInfoInputs.cache
+D:\Personnel\PersonnelWebApp\Personnel.Domain\obj\Debug\net8.0\Personnel.Domain.AssemblyInfo.cs
+D:\Personnel\PersonnelWebApp\Personnel.Domain\obj\Debug\net8.0\Personnel.Domain.csproj.CoreCompileInputs.cache
+D:\Personnel\PersonnelWebApp\Personnel.Domain\obj\Debug\net8.0\Personnel.Domain.sourcelink.json
+D:\Personnel\PersonnelWebApp\Personnel.Domain\bin\Debug\net8.0\Personnel.Domain.deps.json
+D:\Personnel\PersonnelWebApp\Personnel.Domain\bin\Debug\net8.0\Personnel.Domain.dll
+D:\Personnel\PersonnelWebApp\Personnel.Domain\bin\Debug\net8.0\Personnel.Domain.pdb
+D:\Personnel\PersonnelWebApp\Personnel.Domain\bin\Debug\net8.0\Personnel.Domain.Core.dll
+D:\Personnel\PersonnelWebApp\Personnel.Domain\bin\Debug\net8.0\Personnel.Domain.Core.pdb
+D:\Personnel\PersonnelWebApp\Personnel.Domain\obj\Debug\net8.0\Personnel.Domain.csproj.CopyComplete
+D:\Personnel\PersonnelWebApp\Personnel.Domain\obj\Debug\net8.0\Personnel.Domain.dll
+D:\Personnel\PersonnelWebApp\Personnel.Domain\obj\Debug\net8.0\refint\Personnel.Domain.dll
+D:\Personnel\PersonnelWebApp\Personnel.Domain\obj\Debug\net8.0\Personnel.Domain.pdb
+D:\Personnel\PersonnelWebApp\Personnel.Domain\obj\Debug\net8.0\ref\Personnel.Domain.dll

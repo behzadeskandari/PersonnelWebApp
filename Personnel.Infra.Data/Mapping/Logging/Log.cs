@@ -1,11 +1,11 @@
 ﻿using Microsoft.Extensions.Logging;
-using Personnel.Domain.Identity;
-using Personnel.Domain;
+using Personnel.Domain.Entities.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Personnel.Domain.Entities;
 
 namespace Personnel.Infra.Data.Mapping.Logging
 {

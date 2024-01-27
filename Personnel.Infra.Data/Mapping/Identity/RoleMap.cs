@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
-using Personnel.Domain.Identity;
+using Personnel.Domain.Entities.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;

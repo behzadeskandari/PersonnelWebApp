@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Personnel.Domain.Identity;
+using Personnel.Domain.Entities.Identity;
 
 namespace Personnel.Infra.Data.Mapping.Identity
 {

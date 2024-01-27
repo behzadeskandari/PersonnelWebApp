@@ -4,7 +4,7 @@ using NLog.Config;
 using Personnel.Api;
 using Personnel.Infra.Data.Mapping.Logging;
 
-namespace Personnel.Api.Program 
+namespace Personnel.Api.Program
 {
     public class Program
     {
@@ -63,5 +63,5 @@ namespace Personnel.Api.Program
 
     }
 
-}
+
 }

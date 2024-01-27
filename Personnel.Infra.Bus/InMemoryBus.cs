@@ -1,4 +1,8 @@
-﻿namespace Personnel.Infra.Bus
+﻿using MediatR;
+using Personnel.Domain.Core.Bus;
+using Personnel.Domain.Core.Commands;
+
+namespace Personnel.Infra.Bus
 {
     public sealed class InMemoryBus : IMediatorHandler
     {

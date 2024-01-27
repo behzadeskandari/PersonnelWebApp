@@ -1,4 +1,4 @@
-﻿using Personnel.Domain.Identity;
+﻿using Personnel.Domain.Entities.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;

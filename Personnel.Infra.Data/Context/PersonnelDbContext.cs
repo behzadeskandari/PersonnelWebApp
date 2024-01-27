@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Personnel.Domain.Extensions;
-using Personnel.Domain.Identity;
+using Personnel.Domain.Entities.Identity;
 using Personnel.Infra.Data.Contracts;
 using Personnel.Infra.Data.Mapping.Identity;
 using System;
