@@ -38,6 +38,9 @@
             "projectReferences": {
               "D:\\Personnel\\PersonnelWebApp\\Personnel.Domain\\Personnel.Domain.csproj": {
                 "projectPath": "D:\\Personnel\\PersonnelWebApp\\Personnel.Domain\\Personnel.Domain.csproj"
+              },
+              "D:\\Personnel\\PersonnelWebApp\\Personnel.Infra.Data\\Personnel.Infra.Data.csproj": {
+                "projectPath": "D:\\Personnel\\PersonnelWebApp\\Personnel.Infra.Data\\Personnel.Infra.Data.csproj"
               }
             }
           }
@@ -51,6 +54,20 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.Authorization": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.ViewFeatures": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

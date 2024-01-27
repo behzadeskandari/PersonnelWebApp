@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Personnel.Application\Personnel.Application.csproj" />
     <ProjectReference Include="..\Personnel.Infra.Data\Personnel.Infra.Data.csproj" />
     <ProjectReference Include="..\Personnel.Infra.IoC\Personnel.Infra.IoC.csproj" />
   </ItemGroup>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Personnel.Domain.Extensions
+namespace Personnel.Application.Extensions
 {
     public static class StringExtensions
     {

@@ -94,3 +94,4 @@ D:\Personnel\PersonnelWebApp\Personnel.Api\obj\Debug\net8.0\refint\Personnel.Api
 D:\Personnel\PersonnelWebApp\Personnel.Api\obj\Debug\net8.0\Personnel.Api.pdb
 D:\Personnel\PersonnelWebApp\Personnel.Api\obj\Debug\net8.0\Personnel.Api.genruntimeconfig.cache
 D:\Personnel\PersonnelWebApp\Personnel.Api\obj\Debug\net8.0\ref\Personnel.Api.dll
+D:\Personnel\PersonnelWebApp\Personnel.Api\obj\Debug\net8.0\Personnel.Api.MvcApplicationPartsAssemblyInfo.cs

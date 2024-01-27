@@ -2,6 +2,7 @@
 using Personnel.Application.Shared;
 using Personnel.Domain.Core.Interfaces;
 using Personnel.Domain.Dtos;
+using Personnel.Domain.Dtos.Personnel;
 using Personnel.Domain.Dtos.Users;
 using Personnel.Domain.Entities.Identity;
 using Personnel.Domain.Security;
@@ -59,6 +60,65 @@ namespace Personnel.Application.Interfaces
 
         IPagedList<UserListDto> UserList(PageFilterDto command, UserSearchDto search);
 
+
+        int NumberOfAvailableUser(int roleId);
+
+
+
+
+        IList<User> GetAllActiveUsersWithUserLocationId(int userLocationId);
+        User GetUserWithRole(int id);
+
+        List<User> GetAllUserHavePermission(string name);
+
+        User GetUserByPhoneNumber(string phoneNumber);
+
+        IList<int> UserofLocationWithSystemRoleName(int userLocationId, string systemRoleName);
+        Task<bool> ChangePersonelEmail();
+
+        IList<PersonelListDto> GetAllPersonelUser();
+
+
+
+        #region UserLocation
+        void DeleteUserLocation(UserLocation userLocation);
+
+        UserLocation GetUserLocationById(int userLocationId);
+
+        UserLocation GetUserLocationByName(string userLocation);
+        IPagedList<UserLocationDto> SearchAllUserLocation(PageFilterDto command, UserLocationDto search);
+        IList<UserLocation> GetAllUserLocations();
+        IList<UserLocation> GetAllUserLocationsByIsActiveInRecruit(bool isActiveInRecruit);
+        IPagedList<UserLocationDto> GetAllUserLocationsSearch(PageFilterDto command, UserLocationDto model);
+        IList<UserLocation> AllAssitance();
+
+
+        void InsertUserLocation(UserLocation userLocation);
+
+        void UpdateUserLocation(UserLocation userLocation);
+
+
+
+        IList<UserLocation> GetAllActiveUserLocationByIsOprational();
+
+        IList<string> MobileOfUserLocation(int userLocationId);
+
+        List<int> UserRoleIds(int userId);
+
+
+
+
+        //void GenerateUserForArang();
+
+
+        UserLocation GetUserLocationByCode(int code);
+
+        //UserLocation GetUserLocationByCodeAndIsOprational(int code);
+
+        //IList<UserLocationDamageDto> GetUserLocationDamage();
+
+        Task<SignInResult> AdminLogin(User user, string password);
+        #endregion
 
     }
 }

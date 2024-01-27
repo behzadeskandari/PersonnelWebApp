@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Personnel.Domain.Interfaces;
 
-namespace Personnel.Domain.Extensions
+namespace Personnel.Application.Extensions
 {
     public static class CoreExtensions
     {
