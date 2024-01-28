@@ -74,7 +74,6 @@ namespace Personnel.Domain.Entities.Identity
         public DateTime? Birthday { get; set; }
 
         public int? UserLocationId { get; set; }
-        public bool? ShahkarInquiry { get; set; }
         public bool? IsSiteEmployee { get; set; }
 
         public UserLocation UserLocation { get; set; }
@@ -87,7 +86,7 @@ namespace Personnel.Domain.Entities.Identity
 
         public ICollection<UserInRole> UserInRoles { get; set; } = new List<UserInRole>();
         public ICollection<UserRefreshToken> UserRefreshTokens { get; set; }
-
+        public ICollection<UserClaim> UserClaims { get; set; }
     }
 
 
@@ -102,8 +101,6 @@ namespace Personnel.Domain.Entities.Identity
         UserAgent = 3,
         [Description("ادمین")]
         Admin = 4,
-        [Description("کارگزار")]
-        Broker = 5,
         [Description("مشاور")]
         Consultant = 6,
     }

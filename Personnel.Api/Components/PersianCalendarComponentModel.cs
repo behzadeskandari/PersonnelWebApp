@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Html;
 using Personnel.Api.Components.Enums;
-using Personnel.Application.Extensions;
+using Personnel.Domain.Core.Extensions;
 
 namespace Personnel.Api.Components
 {

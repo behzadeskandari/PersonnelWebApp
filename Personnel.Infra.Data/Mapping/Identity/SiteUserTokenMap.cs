@@ -16,7 +16,8 @@ namespace Personnel.Infra.Data.Mapping.Identity
         {
 
             builder.HasOne(u => u.User).WithMany(u => u.SiteUserTokens).HasForeignKey(u => u.UserId);
-            builder.ToTable("SiteUserTokens", "identity");
+            builder.ToTable("SiteUserTokens", "Identity");
+            builder.HasQueryFilter(u => !u.Deleted);
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Personnel.Application.Interfaces;
-using Personnel.Application.Shared;
 using Personnel.Domain.Core.Contracts;
 using Personnel.Domain.Core.Interfaces;
 using Personnel.Domain.Dtos.Users;
@@ -20,6 +19,7 @@ using Personnel.Application.Mangers;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Personnel.Application.Helpers;
 using Personnel.Domain.Dtos.Personnel;
+using Personnel.Infra.Data.Shared;
 
 namespace Personnel.Application.Services
 {
@@ -31,12 +31,7 @@ namespace Personnel.Application.Services
         private readonly BaseUserManager _baseUserManager;
         private readonly BaseSignInManager _baseSignInManager;
         
-        #region Field
 
-
-        #endregion
-
-        #region Ctor
 
         public UserService(IUnitOfWork unitOfWork, IMapper mapper, BaseUserManager baseUserManager, BaseSignInManager baseSignInManager)
         {
@@ -45,7 +40,6 @@ namespace Personnel.Application.Services
             _baseUserManager = baseUserManager;
             _baseSignInManager = baseSignInManager;
         }
-        #endregion
 
         #region Method
 

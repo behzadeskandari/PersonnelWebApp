@@ -29,11 +29,9 @@ namespace Personnel.Infra.Data.Contracts
         
         }
 
-
-
-        public Task CommitAsync()
+        public async Task CommitAsync()
         {
-            return _db.SaveChangesAsync();
+            await _db.SaveChangesAsync();
         }
 
         public ValueTask RollBackAsync()

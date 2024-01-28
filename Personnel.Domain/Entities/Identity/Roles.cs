@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Personnel.Domain.Extensions;
 using Personnel.Domain.Security;
 using System;
 using System.Collections.Generic;
@@ -7,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Personnel.Domain.Core.Extensions;
 
 namespace Personnel.Domain.Entities.Identity
 {

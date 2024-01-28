@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Mangers\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
 

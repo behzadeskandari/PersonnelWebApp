@@ -10,11 +10,11 @@ namespace Personnel.Domain.Entities.Identity
 {
     public class UserInRole : IdentityUserRole<int>
     {
-
+        public int Id { get; set; }
         public virtual Roles Role { get; set; }
 
 
-
+        public bool Deleted { get; set; }
         public virtual User User { get; set; }
     }
 }

@@ -16,3 +16,5 @@ D:\Personnel\PersonnelWebApp\Personnel.Application\obj\Debug\net8.0\Personnel.Ap
 D:\Personnel\PersonnelWebApp\Personnel.Application\obj\Debug\net8.0\refint\Personnel.Application.dll
 D:\Personnel\PersonnelWebApp\Personnel.Application\obj\Debug\net8.0\Personnel.Application.pdb
 D:\Personnel\PersonnelWebApp\Personnel.Application\obj\Debug\net8.0\ref\Personnel.Application.dll
+D:\Personnel\PersonnelWebApp\Personnel.Application\bin\Debug\net8.0\Personnel.Infra.Data.dll
+D:\Personnel\PersonnelWebApp\Personnel.Application\bin\Debug\net8.0\Personnel.Infra.Data.pdb

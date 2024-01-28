@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Personnel.Api.Enum;
+using Personnel.Api.Components.Enums;
+using Personnel.Api.Components.PersianCalendarComponent;
+using Personnel.Api.Enums;
+using Personnel.Api.Models;
 using Personnel.Application.Interfaces;
 
 namespace Personnel.Api.Controllers
@@ -42,25 +45,28 @@ namespace Personnel.Api.Controllers
             AddNotification(NotifyType.Error, message, persistForTheNextRequest);
         }
 
-        protected virtual void AddNotification(NotifyType type, string message, bool persistForTheNextRequest)
+        protected virtual IActionResult AddNotification(NotifyType type, string message, bool persistForTheNextRequest)
         {
-            string dataKey = string.Format("Portal.notifications.{0}", type);
-            if (persistForTheNextRequest)
+            // Assuming you have a NotifyModel class or similar to represent the notification
+            var notification = new NotifyModel { Type = type, Message = message };
+
+            // Assuming you have a Notifications property in your base controller to store notifications
+            List<NotifyModel> notifications = HttpContext.Items["Notifications"] as List<NotifyModel>;
+            if (notifications == null)
             {
-                if (TempData[dataKey] == null)
-                    TempData[dataKey] = new List<string>();
-                ((List<string>)TempData[dataKey]).Add(message);
+                notifications = new List<NotifyModel>();
+                HttpContext.Items["Notifications"] = notifications;
             }
-            else
-            {
-                if (ViewData[dataKey] == null)
-                    ViewData[dataKey] = new List<string>();
-                ((List<string>)ViewData[dataKey]).Add(message);
-            }
+
+            notifications.Add(notification);
+
+            // You can return a response with the notifications if needed
+            return Ok(notifications);
         }
         public IActionResult GetCalendarInner(int year, int month, RequestMonthType? request)
         {
-            return ViewComponent(typeof(PersianCalendarComponent), new { year, month, request });
+          
+            return Ok(new PersianCalendarComponentViewModel(year, month, (int)request));
         }
 
         protected IActionResult AccessDeniedView()

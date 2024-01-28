@@ -10,6 +10,8 @@ namespace Personnel.Domain.Entities.Identity
 {
     public class UserClaim : IdentityUserClaim<int>, IEntity
     {
+        public int UserId { get; set; }
         public User User { get; set; }
+        public bool Deleted { get; set; }
     }
 }

@@ -6,6 +6,18 @@ using Personnel.Infra.Data.Context;
 using Personnel.Infra.IoC;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
+using System;
+using Personnel.Domain.Entities.Identity;
+using Personnel.Application.Interfaces;
+using Personnel.Application.Services;
+using Personnel.Infra.Data.Contracts;
+using Personnel.Infra.Data.Interfaces;
+using Personnel.Infra.Data.Stores;
+using Personnel.Infra.Data.Factories;
+using Personnel.Application.Mangers;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.Configuration;
 
 namespace Personnel.Api
 {
@@ -21,29 +33,98 @@ namespace Personnel.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<CookiePolicyOptions>(options =>
-            {
-                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
-            });
 
-            services.AddDbContext<PersonnelDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<PersonnelDbContext>()
-                .AddDefaultUI()
-                .AddEntityFrameworkStores<PersonnelDbContext>();
+            //var persianCulture = new CultureInfo("fa-IR");
+            //persianCulture.NumberFormat.NumberDecimalSeparator = ".";
+            //persianCulture.DateTimeFormat.ShortDatePattern = "yyyy/MM/dd";
+            //CultureInfo[] supportedCultures = new[] { persianCulture, new CultureInfo("en-US") };
+
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                options.DefaultRequestCulture = new RequestCulture("en-US");
+                //options.SupportedCultures = supportedCultures;
+                //options.SupportedUICultures = supportedCultures;
+                options.SupportedCultures = new List<CultureInfo> { new CultureInfo("en-US") };
+                options.SupportedUICultures = new List<CultureInfo> { new CultureInfo("en-US") };
+                options.ApplyCurrentCultureToResponseHeaders = false;
+                options.RequestCultureProviders = new List<IRequestCultureProvider>
+                {
+                    new QueryStringRequestCultureProvider(),
+                    new CookieRequestCultureProvider(),
+                };
+            });
+            CultureInfo.CurrentCulture = CultureInfo.DefaultThreadCurrentCulture;
+            CultureInfo.CurrentUICulture = CultureInfo.DefaultThreadCurrentUICulture;
+
+            //services.Configure<CookiePolicyOptions>(options =>
+            //{
+            //    // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+            //    options.CheckConsentNeeded = context => true;
+            //    options.MinimumSameSitePolicy = SameSiteMode.None;
+            //});
 
             //services.AddDbContext<PersonnelDbContext>(options =>
-            //{
-            //    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
-            //});
-            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            //options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            //services.AddIdentity<User, Roles>()
+            //     .AddEntityFrameworkStores<PersonnelDbContext>()
+            //     .AddDefaultUI()
+            //     .AddDefaultTokenProviders();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("DomainPolicy",
+                    x =>
+                    {
+                        x.AllowAnyOrigin()
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+                    });
+            });
+            services.AddDbContext<PersonnelDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+            });
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IUserClaimsPrincipalFactory<User>, BaseUserClaimsPrincipleFactory>();
+            services.AddScoped<IRoleStore<Roles>, BaseRoleStore>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUserStore<User>, BaseUserStore>();
+            //services.AddScoped<IProfileService, ProfileService>();
+            //services.AddScoped<IUserInRoleService, UserInRoleService>();
+            //services.AddScoped<IPermissionRecordService, PermissionRecordService>();
+            //services.AddAutoMapper(typeof(IoC));
+
+            services.AddIdentity<User, Roles>(options =>
+            {
+                options.Stores.ProtectPersonalData = false;
+
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequiredUniqueChars = 0;
+                options.Password.RequireUppercase = false;
+                options.SignIn.RequireConfirmedEmail = false;
+                options.SignIn.RequireConfirmedPhoneNumber = false;
+
+                options.Lockout.MaxFailedAccessAttempts = 5;
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(1);
+                options.Lockout.AllowedForNewUsers = false;
+                options.User.RequireUniqueEmail = false;
+
+
+
+            }).AddUserStore<BaseUserStore>().AddRoleStore<BaseRoleStore>().AddUserManager<BaseUserManager>().AddRoleManager<BaseRoleManager>().AddSignInManager<BaseSignInManager>()
+            .AddClaimsPrincipalFactory<BaseUserClaimsPrincipleFactory>().AddDefaultTokenProviders().AddEntityFrameworkStores<PersonnelDbContext>();
+            services.AddLogging(builder =>
+            {
+                builder.AddFilter(DbLoggerCategory.Database.Command.Name, LogLevel.Debug);
+                builder.AddConsole();
+            });
             MediatRServiceConfiguration mediat = new MediatRServiceConfiguration();
             mediat.MediatorImplementationType = typeof(Startup);
-            
+
             services.AddMediatR(mediat);
 
             RegisterServices(services);
@@ -69,7 +150,7 @@ namespace Personnel.Api
             app.UseCookiePolicy();
 
             app.UseAuthentication();
-            
+
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {

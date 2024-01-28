@@ -17,7 +17,10 @@ namespace Personnel.Infra.Data.Mapping.Identity
         {
 
             builder.ToTable("UserTokens", "Identity");
-
+            builder.HasOne(st => st.User)
+            .WithMany(u => u.UserTokens)
+            .HasForeignKey(st => st.UserId)
+            .IsRequired(false);
             builder.HasKey(x => x.Id);
             builder.Property(x => x.RefreshTokenIdHash).HasMaxLength(450).IsRequired();
             builder.Property(x => x.RefreshTokenIdHashSource).HasMaxLength(450).IsRequired();

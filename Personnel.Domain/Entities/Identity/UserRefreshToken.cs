@@ -17,5 +17,6 @@ namespace Personnel.Domain.Entities.Identity
         public User User { get; set; }
         public DateTime CreatedAt { get; set; }
         public bool IsValid { get; set; }
+        public bool Deleted { get; set; }
     }
 }

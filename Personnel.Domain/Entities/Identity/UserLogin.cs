@@ -14,8 +14,9 @@ namespace Personnel.Domain.Entities.Identity
         {
             LoggedOn = DateTime.Now;
         }
-
+        public int Id { get; set; }
         public Identity.User User { get; set; }
         public DateTime LoggedOn { get; set; }
+        public bool Deleted { get; set; }
     }
 }

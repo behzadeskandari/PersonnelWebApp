@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components.Authorization;
-using Personnel.Domain.Extensions;
 
 namespace Personnel.Application.Interfaces
 {

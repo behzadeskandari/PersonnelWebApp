@@ -42,9 +42,5 @@ namespace Personnel.Domain.Dtos
         public IList<DataSortDto> Sort { get; set; }
     }
 
-    public class DataSortDto
-    {
-        public string Field { get; set; }
-        public string Dir { get; set; }
-    }
+   
 }

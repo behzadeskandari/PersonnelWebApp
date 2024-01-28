@@ -15,7 +15,7 @@ namespace Personnel.Infra.Data.Mapping.Identity
         {
             builder.ToTable("UserInRoles", "Identity");
 
-
+            builder.HasQueryFilter(u => !u.Deleted);
             builder.HasOne(x => x.User).WithMany(x => x.UserInRoles).HasForeignKey(x => x.UserId);
             builder.HasOne(x => x.Role).WithMany(x => x.UserInRoles).HasForeignKey(x => x.RoleId);
         }

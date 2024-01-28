@@ -14,8 +14,9 @@ namespace Personnel.Domain.Entities.Identity
         {
             GeneratedTime = DateTime.Now;
         }
-
+        public int Id { get; set; }
         public User User { get; set; }
+        public bool Deleted { get; set; }
         public DateTime GeneratedTime { get; set; }
     }
 }

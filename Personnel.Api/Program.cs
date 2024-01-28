@@ -21,26 +21,26 @@ namespace Personnel.Api.Program
         public static void Main(string[] args)
         {
             LoggingConfiguration loggingConfiguration = new();
-            loggingConfiguration.DefaultCultureInfo = new System.Globalization.CultureInfo("IR-fa");
+            //loggingConfiguration.DefaultCultureInfo = new System.Globalization.CultureInfo("en-US");
 
-            var logger = LogManager.Setup()
-                                 .LoadConfiguration(loggingConfiguration)
-                                 .GetCurrentClassLogger();
+            //var logger = LogManager.Setup()
+            //                     .LoadConfiguration(loggingConfiguration)
+            //                     .GetCurrentClassLogger();
             try
             {
-                logger.Debug("init main");
+                //logger.Debug("init main");
                 CreateHostBuilder(args).Build().Run();
             }
             catch (Exception exception)
             {
                 //NLog: catch setup errors
-                logger.Error(exception, "Stopped program because of exception");
+                //logger.Error(exception, "Stopped program because of exception");
                 throw;
             }
             finally
             {
                 // Ensure to flush and stop internal timers/threads before application-exit (Avoid segmentation fault on Linux)
-                NLog.LogManager.Shutdown();
+                //NLog.LogManager.Shutdown();
             };
         }
 
